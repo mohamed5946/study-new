@@ -20,10 +20,18 @@ class _StudyScreenState extends State<StudyScreen> {
   @override
   void initState() {
     super.initState();
-    _load();
+    // Crash-hygiene fix: never call setState() synchronously from initState
+    // of a screen that IndexedStack builds during the shell's build.
+    // Assign directly here; refresh after the first frame instead.
+    _pdfs = HiveService.pdfsBox.values.toList()
+      ..sort((a, b) => b.addedAt.compareTo(a.addedAt));
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) _load();
+    });
   }
 
   void _load() {
+    if (!mounted) return;
     setState(() {
       _pdfs = HiveService.pdfsBox.values.toList()
         ..sort((a, b) => b.addedAt.compareTo(a.addedAt));

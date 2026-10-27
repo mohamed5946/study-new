@@ -35,6 +35,15 @@ android {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig = signingConfigs.getByName("debug")
+            // Crash fix 2026-10-27: the v1.0.0 release crashed on every launch
+            // on a real phone while the Dart UI booted cleanly in tests. The
+            // only remaining crash category was native code stripped by R8
+            // (ML Kit / Syncfusion / JNI plugins register at engine start).
+            // Shrinking is OFF for release until a device-verified reason
+            // exists to turn it back on; the APK is larger but no class can
+            // be stripped at runtime anymore.
+            isMinifyEnabled = false
+            isShrinkResources = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"

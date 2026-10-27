@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'app_colors.dart';
 
 class AppTheme {
@@ -20,7 +19,7 @@ class AppTheme {
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        titleTextStyle: GoogleFonts.cairo(
+        titleTextStyle: TextStyle(fontFamily: 'Cairo', 
           fontSize: 20,
           fontWeight: FontWeight.w700,
           color: AppColors.textPrimaryLight,
@@ -40,7 +39,7 @@ class AppTheme {
           elevation: 0,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
-          textStyle: GoogleFonts.cairo(fontWeight: FontWeight.w600, fontSize: 16),
+          textStyle: TextStyle(fontFamily: 'Cairo', fontWeight: FontWeight.w600, fontSize: 16),
         ),
       ),
       inputDecorationTheme: InputDecorationTheme(
@@ -76,7 +75,7 @@ class AppTheme {
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        titleTextStyle: GoogleFonts.cairo(
+        titleTextStyle: TextStyle(fontFamily: 'Cairo', 
           fontSize: 20,
           fontWeight: FontWeight.w700,
           color: AppColors.textPrimaryDark,
@@ -96,7 +95,7 @@ class AppTheme {
           elevation: 0,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
-          textStyle: GoogleFonts.cairo(fontWeight: FontWeight.w600, fontSize: 16),
+          textStyle: TextStyle(fontFamily: 'Cairo', fontWeight: FontWeight.w600, fontSize: 16),
         ),
       ),
       inputDecorationTheme: InputDecorationTheme(
@@ -113,16 +112,16 @@ class AppTheme {
 
   static TextTheme _textTheme(Color primary, Color secondary) {
     return TextTheme(
-      displayLarge: GoogleFonts.cairo(fontSize: 32, fontWeight: FontWeight.w800, color: primary),
-      displayMedium: GoogleFonts.cairo(fontSize: 28, fontWeight: FontWeight.w700, color: primary),
-      headlineLarge: GoogleFonts.cairo(fontSize: 24, fontWeight: FontWeight.w700, color: primary),
-      headlineMedium: GoogleFonts.cairo(fontSize: 20, fontWeight: FontWeight.w700, color: primary),
-      titleLarge: GoogleFonts.cairo(fontSize: 18, fontWeight: FontWeight.w600, color: primary),
-      titleMedium: GoogleFonts.cairo(fontSize: 16, fontWeight: FontWeight.w600, color: primary),
-      bodyLarge: GoogleFonts.cairo(fontSize: 16, fontWeight: FontWeight.w400, color: primary),
-      bodyMedium: GoogleFonts.cairo(fontSize: 14, fontWeight: FontWeight.w400, color: primary),
-      bodySmall: GoogleFonts.cairo(fontSize: 12, fontWeight: FontWeight.w400, color: secondary),
-      labelLarge: GoogleFonts.cairo(fontSize: 14, fontWeight: FontWeight.w600, color: primary),
+      displayLarge: TextStyle(fontFamily: 'Cairo', fontSize: 32, fontWeight: FontWeight.w800, color: primary),
+      displayMedium: TextStyle(fontFamily: 'Cairo', fontSize: 28, fontWeight: FontWeight.w700, color: primary),
+      headlineLarge: TextStyle(fontFamily: 'Cairo', fontSize: 24, fontWeight: FontWeight.w700, color: primary),
+      headlineMedium: TextStyle(fontFamily: 'Cairo', fontSize: 20, fontWeight: FontWeight.w700, color: primary),
+      titleLarge: TextStyle(fontFamily: 'Cairo', fontSize: 18, fontWeight: FontWeight.w600, color: primary),
+      titleMedium: TextStyle(fontFamily: 'Cairo', fontSize: 16, fontWeight: FontWeight.w600, color: primary),
+      bodyLarge: TextStyle(fontFamily: 'Cairo', fontSize: 16, fontWeight: FontWeight.w400, color: primary),
+      bodyMedium: TextStyle(fontFamily: 'Cairo', fontSize: 14, fontWeight: FontWeight.w400, color: primary),
+      bodySmall: TextStyle(fontFamily: 'Cairo', fontSize: 12, fontWeight: FontWeight.w400, color: secondary),
+      labelLarge: TextStyle(fontFamily: 'Cairo', fontSize: 14, fontWeight: FontWeight.w600, color: primary),
     );
   }
 }

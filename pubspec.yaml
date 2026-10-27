@@ -1,7 +1,7 @@
 name: study_assistant
 description: study - Offline-first personal study app for computer science students.
 publish_to: 'none'
-version: 1.0.0+1
+version: 1.0.1+2
 
 environment:
   sdk: '>=3.3.0 <4.0.0'
@@ -23,20 +23,19 @@ dependencies:
   # UI & Utils
   intl: ^0.20.3
   flutter_svg: ^2.0.10+1
-  google_fonts: ^6.2.1
   flutter_animate: ^4.5.0
   glassmorphism: ^3.0.0
   flutter_staggered_animations: ^1.1.1
 
   # PDF
-  syncfusion_flutter_pdfviewer: ^33.2.13
   file_picker: ^10.0.0
   path: ^1.9.0
 
-  # OCR
-  # Note: Use flutter_tesseract_ocr or google_mlkit_text_recognition.
-  # For pure offline Arabic+English we recommend integrating tesseract via platform channel later.
-  google_mlkit_text_recognition: ^0.13.0
+  # NOTE (crash fix 2026-10-27): syncfusion_flutter_pdfviewer and
+  # google_mlkit_text_recognition were REMOVED. They are never imported by
+  # any file under lib/, yet their native code registered at engine start
+  # and R8 processed them (two R8 fixes were already needed just to build).
+  # OCR/PDF-viewer features that need them must re-add the dep explicitly.
 
   # Notifications (local)
   flutter_local_notifications: ^17.2.2
@@ -71,6 +70,17 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+  fonts:
+    - family: Cairo
+      fonts:
+        - asset: assets/fonts/Cairo-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Cairo-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Cairo-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Cairo-ExtraBold.ttf
+          weight: 800
   # fonts:
   #   - family: Cairo
   #     fonts:
