@@ -1,0 +1,79 @@
+name: study_assistant
+description: study - Offline-first personal study app for computer science students.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # Local storage
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  path_provider: ^2.1.3
+
+  # State management
+  provider: ^6.1.2
+
+  # UI & Utils
+  intl: ^0.20.3
+  flutter_svg: ^2.0.10+1
+  google_fonts: ^6.2.1
+  flutter_animate: ^4.5.0
+  glassmorphism: ^3.0.0
+  flutter_staggered_animations: ^1.1.1
+
+  # PDF
+  syncfusion_flutter_pdfviewer: ^33.2.13
+  file_picker: ^10.0.0
+  path: ^1.9.0
+
+  # OCR
+  # Note: Use flutter_tesseract_ocr or google_mlkit_text_recognition.
+  # For pure offline Arabic+English we recommend integrating tesseract via platform channel later.
+  google_mlkit_text_recognition: ^0.13.0
+
+  # Notifications (local)
+  flutter_local_notifications: ^17.2.2
+  timezone: ^0.9.4
+
+  # HTTP for Groq
+  http: ^1.2.2
+  dio: ^5.5.0+1
+
+  # Utils
+  uuid: ^4.4.2
+  shared_preferences: ^2.3.2
+  url_launcher: ^6.3.0
+  share_plus: ^12.0.2
+  permission_handler: ^11.3.1
+  image_picker: ^1.1.2
+  flutter_markdown: ^0.7.3+1
+  clipboard: ^0.1.3
+
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  hive_generator: ^2.0.1
+  build_runner: ^2.4.11
+  mockito: ^5.4.4
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/icons/
+  # fonts:
+  #   - family: Cairo
+  #     fonts:
+  #       - asset: assets/fonts/Cairo-Regular.ttf
+  #       - asset: assets/fonts/Cairo-Bold.ttf
+  #         weight: 700
